@@ -5,7 +5,7 @@ export default function Burger() {
     const [burgerClick, setBurger] = useState(false);
     const navLinks = document.querySelectorAll('.navLinksH li');
 
-    if (!burgerClick) {
+    if (burgerClick) {
         navLinks.forEach((link, index) => {
             if (link.style.animation) {
                 link.style.animation = '';
@@ -20,13 +20,13 @@ export default function Burger() {
     }
 
     return (
-        <div>
-            <div className={`burger ${burgerClick ? 'toggle' : null}`} onClick={isActive}>
+        <div className="burgerWrapper">
+            <div className={`burger ${burgerClick && 'toggle'}`} onClick={isActive}>
                 <div className="line1"></div>
                 <div className="line2"></div>
                 <div className="line3"></div>
             </div>
-            <div className={`burgerMenu ${burgerClick ? 'nav-active' : null}`} >
+            <div className={`burgerMenu ${burgerClick ? 'nav-active' : null}`}>
                 <ul className="navLinksH">
                     <li>
                         <a className="burgerAmenu burgerAmenu-visible">

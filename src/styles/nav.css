@@ -5,6 +5,15 @@
   scroll-behavior: smooth;
 }
 
+.burgerWrapper {
+  display: none;
+}
+
+@media screen and (max-width: 924px) {
+  .burgerWrapper {
+    display: block;
+  }
+}
 .logo a {
   cursor: pointer;
 }

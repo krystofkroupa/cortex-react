@@ -38,6 +38,9 @@
 }
 
 @media screen and (max-width: 924px) {
+  .burgerWrapper {
+    display: block;
+  }
   .navLinks ul {
     display: none;
   }
@@ -130,7 +133,7 @@
 }
 
 .navLinksH li {
-  opacity: 0;
+  opacity: 1;
   transform: translateX(30px);
 }
 
