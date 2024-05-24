@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.sass'
-import Home from './pages/Home'
+import HomePage from './pages/HomePage'
 import DailyMenu from './pages/DailyMenu'
 import Header from "./components/Header"
 import MainMenu from './pages/MainMenu'
@@ -13,10 +13,13 @@ function App() {
         <div className="App">
             <Header/>
             <Routes>
-                <Route path="/" element={<Home/>}/>
+                <Route path="/" element={<HomePage/>}/>
                 <Route path="/poledni" element={<DailyMenu/>}/>
                 <Route path="/jidelni-listek" element={<MainMenu/>}/>
                 <Route path="/fotogalerie" element={<Photos/>}/>
+                <Route path="/pivni-menu" />
+                <Route path="/nase-piva" />
+                <Route path="/rezervace" />
             </Routes>
         </div>
     );
