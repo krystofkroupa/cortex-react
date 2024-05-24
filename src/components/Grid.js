@@ -1,3 +1,5 @@
+import ButtonLink from './ButtonLink'
+
 export default function Grid() {
     return (
         <div className="grid-container">
@@ -6,7 +8,7 @@ export default function Grid() {
                     <div className="article-headerPivni">
                         <div className="article-pivniMenuText">
                             <h1>PIVNÍ MENU</h1>
-                            <img src="src/img/vycep.png" alt="vycepni cisla"/>
+                            <img src={require('../assets/vycep.png')}/>
                         </div>
                     </div>
                 </div>
@@ -23,10 +25,9 @@ export default function Grid() {
                 </div>
             </article>
             <article className="grid-testimonial grid2">
-
                 <div className="article-header">
                     <div className="article-photo">
-                        <img src="src/img/pribory.png" alt="pribory"/>
+                        <img src={require('../assets/pribory.png')}/>
                     </div>
                     <div className="article-headerText">
                         <div className="article-poledni">
@@ -43,16 +44,13 @@ export default function Grid() {
                     </div>
                 </div>
                 <div className="button-poledni">
-                    <a>
-                        <button>Zjistit více</button>
-                    </a>
+                    <ButtonLink title={'Zjistit více'} link={'/poledni'}/>
                 </div>
-
             </article>
             <article className="grid-testimonial grid-row-span2 grid3">
                 <div className="article-header">
                     <div className="article-photo">
-                        <img src="src/img/logoOrange.png" alt="logo"/>
+                        <img src={require('../assets/logoOrange.png')}/>
                     </div>
                     <div className="article-headerText">
                         <div className="article-poledni">
@@ -77,15 +75,13 @@ export default function Grid() {
                     </div>
                 </div>
                 <div className="button-poledni">
-                    <a>
-                        <button>Fotogalerie</button>
-                    </a>
+                    <ButtonLink title={'Fotogalerie'} link={'/fotogalerie'}/>
                 </div>
             </article>
             <article className="grid-testimonial grid4">
                 <div className="article-header">
                     <div className="article-photo">
-                        <img src="src/img/pulitr.png" alt="pribory"/>
+                        <img src={require('../assets/pulitr.png')} alt="pribory"/>
                     </div>
                     <div className="article-headerText">
                         <div className="article-poledni">
@@ -113,16 +109,17 @@ export default function Grid() {
                         <h1>ROZVOZ</h1>
                     </div>
                     <div className="rozvozy-logo">
-                        <a href="https://www.foodora.cz/restaurant/k2ko/malesicky-mikropivovar" target="_blank" rel="noreferrer">
-                            <img src="src/img/foodora.png" alt="wolt logo"/>
+                        <a href="https://www.foodora.cz/restaurant/k2ko/malesicky-mikropivovar" target="_blank"
+                           rel="noreferrer">
+                            <img src={require('../assets/foodora.png')} alt="wolt logo"/>
                         </a>
                         <a href="https://wolt.com/cs/cze/prague/restaurant/malesicky-mikropivovar"
                            target="_blank" rel="noreferrer">
-                            <img src="src/img/wolt.png" alt="foodora logo"/>
+                            <img src={require('../assets/wolt.png')}/>
                         </a>
                         <a href="https://food.bolt.eu/cs-CZ/271-prague/p/39520-male%C5%A1ick%C3%BD-mikropivovar"
                            target="_blank" rel="noreferrer">
-                            <img src="../cortex-react/public/bolt.png" alt="bolt logo"/>
+                            <img src={require('../assets/bolt.png')} alt="bolt logo"/>
                         </a>
                     </div>
                 </div>

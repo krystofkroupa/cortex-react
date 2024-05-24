@@ -13,10 +13,18 @@ $primary-font: "Avenir Next", sans-serif
 .burgerWrapper
   display: none
 
+.navLinks
+  ul
+    display: flex
+    list-style: none
+
 @media screen and (max-width: 924px)
   .burgerWrapper
     display: block
 
+  .navLinks
+    ul
+      display: none
 
 .logo
   a
@@ -32,10 +40,13 @@ $primary-font: "Avenir Next", sans-serif
   margin-left: 20px
 
 .fold-out-pivo
+  border-bottom-left-radius: 12px
+  border-bottom-right-radius: 12px
+  border-top-left-radius: 5px
+  border-top-right-radius: 5px
   border: rgb(255, 251, 235, 0.5) 1px solid
   visibility: visible
   opacity: 1
-  border-radius: 8px
   padding: 4px
   position: absolute
   left: -35.845px
@@ -48,7 +59,10 @@ $primary-font: "Avenir Next", sans-serif
   border: rgb(255, 251, 235, 0.5) 1px solid
   visibility: visible
   opacity: 1
-  border-radius: 8px
+  border-bottom-left-radius: 12px
+  border-bottom-right-radius: 12px
+  border-top-left-radius: 5px
+  border-top-right-radius: 5px
   padding: 4px
   position: absolute
   left: -44.96px
@@ -160,9 +174,10 @@ nav
   transition: all 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0)
   z-index: 10
 
-.navLinks ul, .burgerMenu ul
-  display: flex
-  list-style: none
+.burgerMenu
+  ul
+    display: flex
+    list-style: none
 
 .nav-unscrolled, .nav-unscrolled .burgerMenu
   background-color: $light-color

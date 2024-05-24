@@ -1,27 +1,30 @@
 import {useState} from "react";
 
-export default function Burger() {
+export default function Burger({}) {
 
-    const [burgerClick, setBurger] = useState(false);
-    const navLinks = document.querySelectorAll('.navLinksH li');
+    const [burgerClick, setBurger] = useState(false)
+    const [burgerBeerClick, setBeer] = useState(false)
+    const [burgerMenuClick, setMenu] = useState(false)
 
-    if (burgerClick) {
-        navLinks.forEach((link, index) => {
-            if (link.style.animation) {
-                link.style.animation = '';
-            } else {
-                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 10 + 0.3}s`;
-            }
-        });
+    const isBeerActive = () => {
+        setBeer(true)
+        setMenu(false)
     }
 
-    const isActive = () => {
+    const isMenuActive = () => {
+        setMenu(true)
+        setBeer(false)
+    }
+
+    const isBurgerActive = () => {
         setBurger(!burgerClick)
+        setBeer(false)
+        setMenu(false)
     }
 
     return (
         <div className="burgerWrapper">
-            <div className={`burger ${burgerClick && 'toggle'}`} onClick={isActive}>
+            <div className={`burger ${burgerClick && 'toggle'}`} onClick={isBurgerActive}>
                 <div className="line1"></div>
                 <div className="line2"></div>
                 <div className="line3"></div>
@@ -29,28 +32,26 @@ export default function Burger() {
             <div className={`burgerMenu ${burgerClick ? 'nav-active' : null}`}>
                 <ul className="navLinksH">
                     <li>
-                        <a className="burgerAmenu burgerAmenu-visible">
+                        <a className="burgerAmenu burgerAmenu-visible" onClick={isMenuActive}>
                             Menu
-
-                            <div className="foldmenu-container">
-                                <ul className="burgerFoldMenu foldMenu-hidden">
-                                    <li><a>Polední</a></li>
-                                    <li><a>Jídelní lístek</a></li>
-                                </ul>
-                            </div>
                         </a>
+                        <div className="foldmenu-container">
+                            <ul className={`burgerFoldMenu ${burgerMenuClick ? 'foldMenu-visible' : 'foldMenu-hidden'}`}>
+                                <li><a>Polední</a></li>
+                                <li><a>Jídelní lístek</a></li>
+                            </ul>
+                        </div>
                     </li>
                     <li>
-                        <a className="burgerApivo burgerApivo-visible">
+                        <a className="burgerApivo burgerApivo-visible" onClick={isBeerActive}>
                             Pivo
-
-                            <div className="foldpivo-container">
-                                <ul className="burgerFoldPivo foldPivo-hidden">
-                                    <li><a>Pivní menu</a></li>
-                                    <li><a>">Naše piva</a></li>
-                                </ul>
-                            </div>
                         </a>
+                        <div className="foldpivo-container">
+                            <ul className={`burgerFoldPivo foldPivo-hidden ${burgerBeerClick ? 'foldPivo-visible' : 'foldPivo-hidden'}`}>
+                                <li><a>Pivní menu</a></li>
+                                <li><a>Naše piva</a></li>
+                            </ul>
+                        </div>
                     </li>
                     <li>
                         <a className="">

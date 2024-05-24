@@ -43,16 +43,13 @@ $primary-font: "Avenir Next", sans-serif
   .burgerWrapper
     display: block
 
-  .navLinks ul
-    display: none
-
   .burger
     display: block
 
   .burgerMenu
     display: flex
 
-.burgerFoldMenu
+/*.burgerFoldMenu
   position: absolute
   left: -26.775px
   top: -20.5px
@@ -62,8 +59,9 @@ $primary-font: "Avenir Next", sans-serif
   padding: 2px
   transition: all 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0)
   width: 184px
+  z-index: 10000
 
-.burgerFoldPivo
+.burgerFoldPivo, .burgerFoldMenu
   position: absolute
   left: -26.775px
   top: -20.5px
@@ -71,6 +69,7 @@ $primary-font: "Avenir Next", sans-serif
   border: rgb(255, 251, 235, 0.5) 1px solid
   border-radius: 8px
   padding: 2px
+  z-index: 10000
   transition: all 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0)
   width: 184px
 
@@ -132,7 +131,6 @@ $primary-font: "Avenir Next", sans-serif
       a
         font-size: 1.3em
 
-
 .toggle
   .line3
     transform: rotate(45deg) translate(-5px, -6px)
@@ -144,7 +142,7 @@ $primary-font: "Avenir Next", sans-serif
 .navLinksH
   li
     opacity: 1
-    transform: translateX(30px)
+    transform: translateX(0px)
 
 @keyframes navLinkFade
   from
