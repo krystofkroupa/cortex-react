@@ -11,8 +11,33 @@ export default function Header() {
 
     const [navColor, setNavColor] = useState(true)
     const [logoColor, setLogoColor] = useState(true)
+    const scrollPositionEffect = window.pageYOffset || document.documentElement.scrollTop
 
-    window.addEventListener('scroll', function () {
+    useEffect(() => {
+        window.addEventListener('scroll', function () {
+            const navbar = document.querySelector('.navbar')
+            const viewportHeight = window.innerHeight
+            const scrollPosition = window.pageYOffset || document.documentElement.scrollTop
+            const scrollPercantage = scrollPosition / viewportHeight
+            const logo = document.querySelector('.logo')
+
+            if (scrollPercantage > 0.75) {
+                if (!navbar.classList.contains('nav-scrolled') && !navbar.classList.contains('navLogoScrolled')) {
+                    setNavColor(false)
+                    setLogoColor(false)
+                    console.log("menim :(")
+                }
+            } else {
+                if (navbar.classList.contains('nav-scrolled') || logo.classList.contains('navLogoScrolled')) {
+                    setNavColor(true)
+                    setLogoColor(true)
+                    console.log("menim :-)")
+                }
+            }
+        })
+    }, scrollPositionEffect)
+
+    /*window.addEventListener('scroll', function () {
         const navbar = document.querySelector('.navbar')
         const viewportHeight = window.innerHeight
         const scrollPosition = window.pageYOffset || document.documentElement.scrollTop
@@ -32,7 +57,7 @@ export default function Header() {
                 console.log("menim :-)")
             }
         }
-    });
+    });*/
 
     const [navBeerLink, setNavBeer] = useState(false)
     const [navMenuLink, setNavMenu] = useState(false)
