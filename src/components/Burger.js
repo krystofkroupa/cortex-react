@@ -1,4 +1,5 @@
 import {useState} from "react";
+import {Link} from "react-router-dom";
 
 export default function Burger({}) {
 
@@ -37,8 +38,16 @@ export default function Burger({}) {
                         </a>
                         <div className="foldmenu-container">
                             <ul className={`burgerFoldMenu ${burgerMenuClick ? 'foldMenu-visible' : 'foldMenu-hidden'}`}>
-                                <li><a>Polední</a></li>
-                                <li><a>Jídelní lístek</a></li>
+                                <li>
+                                    <Link to={'/poledni'} onClick={isBurgerActive}>
+                                        Polední
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link to='/jidelni-listek' onClick={isBurgerActive}>
+                                        Jídelní lístek
+                                    </Link>
+                                </li>
                             </ul>
                         </div>
                     </li>
