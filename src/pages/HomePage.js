@@ -2,7 +2,7 @@ import Grid from '../components/Grid'
 import WavesLight from '../components/MainPageWavesLight'
 import WavesDark from '../components/MainPageWavesDark'
 
-export default function Home() {
+export default function HomePage() {
     return (
         <div className="animate-this mainPage">
             <div className="main" id="main1">
