@@ -5,18 +5,20 @@ import {Link} from "react-router-dom";
 
 export default function Header() {
 
-    const menuLink = document.querySelector('.nav-menu')
-    const beerLink = document.querySelector('.nav-pivo')
     const mainPage = document.querySelector('.mainPage')
     const [navColor, setNavColor] = useState(true)
     const [logoColor, setLogoColor] = useState(true)
     const [logoBurger, setLogoBurger] = useState(false)
-
+    const [navBeerLink, setNavBeer] = useState(false)
+    const [navMenuLink, setNavMenu] = useState(false)
+    const scrollPosition = window.scrollY || document.documentElement.scrollTop
+    const viewportHeight = window.innerHeight;
+    const scrollPercentage = scrollPosition / viewportHeight
 
     let colorsChanged = false
 
-    window.addEventListener('scroll', function () {
-        const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+    function handleNavColorChange() {
+        const scrollPosition = window.scrollY || document.documentElement.scrollTop
         const viewportHeight = window.innerHeight;
         const scrollPercentage = scrollPosition / viewportHeight;
 
@@ -31,19 +33,22 @@ export default function Header() {
             colorsChanged = false
             console.log("netest neahojda")
         }
-    });
-
-    const [navBeerLink, setNavBeer] = useState(false)
-    const [navMenuLink, setNavMenu] = useState(false)
-
-    const isNavMenuActive = () => {
-        setNavMenu(!navMenuLink)
-        setNavBeer(false)
     }
 
-    const isBeerMenuActive = () => {
-        setNavBeer(!navBeerLink)
-        setNavMenu(false)
+    useEffect(() => {
+        window.removeEventListener('scroll', handleNavColorChange)
+        window.addEventListener('scroll', handleNavColorChange)
+
+    }, [scrollPercentage, scrollPosition])
+
+    const setNav = (str) => () => {
+        if (str == "beer") {
+            setNavBeer(!navBeerLink)
+            setNavMenu(false)
+        } else if (str == "menu") {
+            setNavMenu(!navMenuLink)
+            setNavBeer(false)
+        }
     }
 
     if (mainPage) {
@@ -68,21 +73,21 @@ export default function Header() {
                 <div className="navLinks">
                     <ul className="navUl">
                         <li className="nav-menu margin liMenu">
-                            <a className="underline a-menu" onClick={isNavMenuActive}>
+                            <a className="underline a-menu" onClick={setNav("menu")}>
                                 Menu
                             </a>
                             <div
                                 className={`fold-out-menu ${navMenuLink ? 'fold-out-menu-visible' : 'fold-out-menu-hidden'}`}>
                                 <ul>
                                     <li>
-                                        <a className="underline" onClick={isNavMenuActive}>
+                                        <a className="underline" onClick={setNav("menu")}>
                                             <Link to={'/poledni'}>
                                                 Polední menu
                                             </Link>
                                         </a>
                                     </li>
                                     <li>
-                                        <a className="underline" onClick={isNavMenuActive}>
+                                        <a className="underline" onClick={setNav("menu")}>
                                             <Link to={'/jidelni-listek'}>
                                                 Jídelní lístek
                                             </Link>
@@ -92,21 +97,21 @@ export default function Header() {
                             </div>
                         </li>
                         <li className="nav-pivo margin">
-                            <a className="underline a-pivo" onClick={isBeerMenuActive}>
+                            <a className="underline a-pivo" onClick={setNav("beer")}>
                                 Pivo
                             </a>
                             <div
                                 className={`fold-out-pivo ${navBeerLink ? 'fold-out-pivo-visible' : 'fold-out-pivo-hidden'}`}>
                                 <ul>
                                     <li>
-                                        <a className="underline">
+                                        <a className="underline" onClick={setNav("beer")}>
                                             <Link to={'/pivni-menu'}>
                                                 Pivní menu
                                             </Link>
                                         </a>
                                     </li>
                                     <li>
-                                        <a className="underline">
+                                        <a className="underline" onClick={setNav("beer")}>
                                             <Link to={'/nase-piva'}>
                                                 Naše piva
                                             </Link>
