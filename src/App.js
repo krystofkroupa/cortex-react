@@ -8,12 +8,14 @@ import Photos from './pages/Photos'
 import BeerMenu from './pages/BeerMenu'
 import OurBeer from './pages/OurBeer'
 import Reservations from './pages/Reservations'
+import ScrollToHashElement from "./components/ScrollToHashElement";
 import {Routes, Route} from 'react-router-dom'
 import Footer from "./components/Footer"
 
 function App() {
     return (
         <div className="App">
+            <ScrollToHashElement/>
             <Header/>
             <Routes>
                 <Route path="/" element={<HomePage/>}/>

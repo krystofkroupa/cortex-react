@@ -5,7 +5,7 @@ export default function Logo({imageName, classname}) {
     const path = require(`../assets/${imageName}`)
 
     return (
-        <Link to={"/"}>
+        <Link to={"/#main-page"}>
             <img className={classname} src={path}/>
         </Link>
     )

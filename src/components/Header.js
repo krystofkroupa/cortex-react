@@ -1,6 +1,7 @@
 import {useState, useEffect, useRef} from 'react'
 import Burger from './Burger'
 import LogoLink from './LogoLink'
+import ScrollToHashElement from "./ScrollToHashElement";
 import {Link} from "react-router-dom";
 
 export default function Header() {
@@ -14,7 +15,6 @@ export default function Header() {
     const scrollPosition = window.scrollY || document.documentElement.scrollTop
     const viewportHeight = window.innerHeight;
     const scrollPercentage = scrollPosition / viewportHeight
-
     let colorsChanged = false
 
     function handleNavColorChange() {
@@ -38,8 +38,7 @@ export default function Header() {
     useEffect(() => {
         window.removeEventListener('scroll', handleNavColorChange)
         window.addEventListener('scroll', handleNavColorChange)
-
-    }, [scrollPercentage, scrollPosition])
+    }, [])
 
     const setNav = (str) => () => {
         if (str == "beer") {
@@ -56,10 +55,7 @@ export default function Header() {
             setNavMenu(false)
             setNavBeer(false)
         })
-    } else {
-        console.log("mainPage not found")
     }
-
 
     return (
         <header>
@@ -122,7 +118,9 @@ export default function Header() {
                         </li>
                         <li className="margin">
                             <a className="underline">
-                                Kontakt
+                                <Link to={'/#contacts-page'}>
+                                    Kontakt
+                                </Link>
                             </a>
                         </li>
                         <li className="margin">
@@ -134,7 +132,7 @@ export default function Header() {
                         </li>
                     </ul>
                 </div>
-                <Burger  />
+                <Burger/>
             </nav>
         </header>
     )
