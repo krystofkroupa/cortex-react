@@ -5,7 +5,7 @@ import WavesDark from '../components/MainPageWavesDark'
 export default function HomePage() {
     return (
         <div className="animate-this mainPage">
-            <div className="main" id="main1">
+            <div className="main" id="mainPage1">
                 <div className="logo-background">
                     <img src={require('../assets/logo-bg.png')} alt="logo-background"/>
                 </div>
@@ -13,7 +13,7 @@ export default function HomePage() {
                 <div className="fill"></div>
                 <WavesLight/>
             </div>
-            <div className="main2" id="test2">
+            <div  className="main2" id="mainPage2">
                 <div className="fill2"></div>
                 <WavesDark/>
             </div>

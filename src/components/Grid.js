@@ -19,9 +19,7 @@ export default function Grid() {
                     </div>
                 </div>
                 <div className="button-poledni">
-                    <a>
-                        <button>Zjistit více</button>
-                    </a>
+                    <ButtonLink title={'Zjistit více'} link={'/pivni-menu'}/>
                 </div>
             </article>
             <article className="grid-testimonial grid2">
@@ -98,9 +96,7 @@ export default function Grid() {
                     </div>
                 </div>
                 <div className="button-poledni">
-                    <a>
-                        <button>Zjistit více</button>
-                    </a>
+                    <ButtonLink title={'Zjistit více'} link={'/nase-piva'}/>
                 </div>
             </article>
             <article className="grid-testimonial grid-col-span2 grid5">
