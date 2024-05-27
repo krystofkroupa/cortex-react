@@ -1,7 +1,6 @@
 import {useState, useEffect, useRef} from 'react'
 import Burger from './Burger'
 import LogoLink from './LogoLink'
-import ScrollToHashElement from "./ScrollToHashElement";
 import {Link} from "react-router-dom";
 
 export default function Header() {
@@ -9,12 +8,8 @@ export default function Header() {
     const mainPage = document.querySelector('.mainPage')
     const [navColor, setNavColor] = useState(true)
     const [logoColor, setLogoColor] = useState(true)
-    const [logoBurger, setLogoBurger] = useState(false)
     const [navBeerLink, setNavBeer] = useState(false)
     const [navMenuLink, setNavMenu] = useState(false)
-    const scrollPosition = window.scrollY || document.documentElement.scrollTop
-    const viewportHeight = window.innerHeight;
-    const scrollPercentage = scrollPosition / viewportHeight
     let colorsChanged = false
 
     function handleNavColorChange() {
@@ -26,12 +21,12 @@ export default function Header() {
             setNavColor(false)
             setLogoColor(false)
             colorsChanged = true
-            console.log("test ahojda")
+            console.log("Tmava")
         } else if (scrollPercentage <= 0.75 && colorsChanged) {
             setNavColor(true)
             setLogoColor(true)
             colorsChanged = false
-            console.log("netest neahojda")
+            console.log("Svetla")
         }
     }
 
