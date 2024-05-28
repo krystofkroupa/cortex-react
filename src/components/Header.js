@@ -2,6 +2,7 @@ import {useState, useEffect, useRef} from 'react'
 import Burger from './Burger'
 import LogoLink from './LogoLink'
 import {Link} from "react-router-dom";
+import Menu from "./Menu"
 
 export default function Header() {
 
@@ -61,72 +62,7 @@ export default function Header() {
                         <LogoLink classname={'logoBeige'} imageName={'logoBeige.png'}/>
                     </a>
                 </div>
-                <div className="navLinks">
-                    <ul className="navUl">
-                        <li className="nav-menu margin liMenu">
-                            <a className="underline a-menu" onClick={setNav("menu")}>
-                                Menu
-                            </a>
-                            <div
-                                className={`fold-out-menu ${navMenuLink ? 'fold-out-menu-visible' : 'fold-out-menu-hidden'}`}>
-                                <ul>
-                                    <li>
-                                        <a className="underline" onClick={setNav("menu")}>
-                                            <Link to={'/poledni'}>
-                                                Polední menu
-                                            </Link>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a className="underline" onClick={setNav("menu")}>
-                                            <Link to={'/jidelni-listek'}>
-                                                Jídelní lístek
-                                            </Link>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li className="nav-pivo margin">
-                            <a className="underline a-pivo" onClick={setNav("beer")}>
-                                Pivo
-                            </a>
-                            <div
-                                className={`fold-out-pivo ${navBeerLink ? 'fold-out-pivo-visible' : 'fold-out-pivo-hidden'}`}>
-                                <ul>
-                                    <li>
-                                        <a className="underline" onClick={setNav("beer")}>
-                                            <Link to={'/pivni-menu'}>
-                                                Pivní menu
-                                            </Link>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a className="underline" onClick={setNav("beer")}>
-                                            <Link to={'/nase-piva'}>
-                                                Naše piva
-                                            </Link>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li className="margin">
-                            <a className="underline">
-                                <Link to={'/#contacts-page'}>
-                                    Kontakt
-                                </Link>
-                            </a>
-                        </li>
-                        <li className="margin">
-                            <a className="underline">
-                                <Link to={'/rezervace'}>
-                                    Rezervace
-                                </Link>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                <Menu isOpen={false}/>
                 <Burger/>
             </nav>
         </header>

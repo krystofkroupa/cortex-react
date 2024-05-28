@@ -4,31 +4,39 @@ $primary-color: #FFB84C
 $light-color: #FFFBEB
 $primary-font: "Avenir Next", sans-serif
 
-.burgerMenu
-  z-index: 8
-  position: absolute
-  right: 0
-  height: calc(100vh - 80px)
-  width: 100vw
-  background-color: $light-color
-  transform: translateX(100%)
-  display: none
-  flex-direction: column
-  justify-content: center
-  align-items: center
-  top: 80px
-  transition: all 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0)
-  text-align: center
 
-@media screen and (max-width: 650px)
-  .burgerMenu
+
+.burgerMenu
+  @media screen and (max-width: 924px)
+    z-index: 8
+    position: absolute
+    right: 0
+    height: calc(100vh - 80px)
     width: 100vw
+    background-color: $light-color
+    transform: translateX(100%)
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    top: 80px
+    transition: all 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0)
+    text-align: center
+
+    ul
+      display: flex
+      flex-direction: column
+
+  @media screen and (max-width: 650px)
+    width: 100vw
+
 
 .burger
   position: relative
   z-index: 15
-  display: none
   cursor: pointer
+
+  @media screen and (min-width: 925px)
+    display: none
 
 .burger div
   position: relative
@@ -39,7 +47,7 @@ $primary-font: "Avenir Next", sans-serif
   border-radius: 8px
   transition: all 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0)
 
-@media screen and (max-width: 924px)
+
   .burgerWrapper
     display: block
 
@@ -48,18 +56,6 @@ $primary-font: "Avenir Next", sans-serif
 
   .burgerMenu
     display: flex
-
-/*.burgerFoldMenu
-  position: absolute
-  left: -26.775px
-  top: -20.5px
-  background-color: $primary-color
-  border: rgb(255, 251, 235, 0.5) 1px solid
-  border-radius: 8px
-  padding: 2px
-  transition: all 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0)
-  width: 184px
-  z-index: 10000
 
 .burgerFoldPivo, .burgerFoldMenu
   position: absolute
@@ -87,9 +83,7 @@ $primary-font: "Avenir Next", sans-serif
       background-color: $light-color
 
 .burgerMenu
-  ul
-    display: flex
-    flex-direction: column
+
 
 .burgerMenu
   ul
