@@ -1,7 +1,7 @@
 import Grid from '../components/Grid'
 import WavesLight from '../components/MainPageWavesLight'
 import WavesDark from '../components/MainPageWavesDark'
-import ScrollToHashElement from "../components/ScrollToHashElement";
+import ContactsPage from "./ContactsPage";
 
 export default function HomePage() {
     return (
@@ -14,10 +14,7 @@ export default function HomePage() {
                 <div className="fill"></div>
                 <WavesLight/>
             </div>
-            <div className="main2" id="contacts-page">
-                <div className="fill2"></div>
-                <WavesDark/>
-            </div>
+            <ContactsPage/>
         </div>
     );
 }

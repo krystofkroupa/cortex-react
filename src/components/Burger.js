@@ -1,31 +1,37 @@
 import {useState} from "react";
 import {Link} from "react-router-dom";
 
-export default function Burger() {
+export default function Burger({toggleBurgerMenu, burgerClick, burgerMenuClick, burgerBeerClick}) {
 
-    const [burgerClick, setBurger] = useState(false)
+    /*const [burgerClick, setBurger] = useState(false)
     const [burgerBeerClick, setBeer] = useState(false)
-    const [burgerMenuClick, setMenu] = useState(false)
+    const [burgerMenuClick, setMenu] = useState(false)*/
 
-    const isBeerActive = () => {
-        setBeer(true)
-        setMenu(false)
+    /*const toggleBurgerMenu = (burgerType) => () => {
+        if (burgerType === "burgerMenu") {
+            setMenu(true)
+            setBeer(false)
+        } else if (burgerType === "burgerBeer") {
+            setBeer(true)
+            setMenu(false)
+        } else if (burgerType === "burger") {
+            setBurger(!burgerClick)
+            setBeer(false)
+            setMenu(false)
+        }
     }
+    ${burgerClick && 'toggle'}
 
-    const isMenuActive = () => {
-        setMenu(true)
-        setBeer(false)
-    }
+    ${burgerClick ? 'nav-active' : null}
 
-    const isBurgerActive = () => {
-        setBurger(!burgerClick)
-        setBeer(false)
-        setMenu(false)
-    }
+    ${burgerMenuClick ? 'foldMenu-visible' : 'foldMenu-hidden'}
+
+     ${burgerBeerClick ? 'foldPivo-visible' : 'foldPivo-hidden'}
+    */
 
     return (
         <div className="burgerWrapper">
-            <div className={`burger ${burgerClick && 'toggle'}`} onClick={isBurgerActive}>
+            <div className={`burger ${burgerClick && 'toggle'}`} onClick={toggleBurgerMenu("burger")}>
                 <div className="line1"></div>
                 <div className="line2"></div>
                 <div className="line3"></div>
@@ -33,18 +39,18 @@ export default function Burger() {
             <div className={`burgerMenu ${burgerClick ? 'nav-active' : null}`}>
                 <ul className="navLinksH">
                     <li>
-                        <a className="burgerAmenu burgerAmenu-visible" onClick={isMenuActive}>
+                        <a className="burgerAmenu burgerAmenu-visible" onClick={toggleBurgerMenu("burgerMenu")}>
                             Menu
                         </a>
                         <div className="foldmenu-container">
                             <ul className={`burgerFoldMenu ${burgerMenuClick ? 'foldMenu-visible' : 'foldMenu-hidden'}`}>
                                 <li>
-                                    <Link to={'/poledni'} onClick={isBurgerActive}>
+                                    <Link to={'/poledni'} onClick={toggleBurgerMenu("burger")}>
                                         Polední
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to='/jidelni-listek' onClick={isBurgerActive}>
+                                    <Link to='/jidelni-listek' onClick={toggleBurgerMenu("burger")}>
                                         Jídelní lístek
                                     </Link>
                                 </li>
@@ -52,7 +58,7 @@ export default function Burger() {
                         </div>
                     </li>
                     <li>
-                        <a className="burgerApivo burgerApivo-visible" onClick={isBeerActive}>
+                        <a className="burgerApivo burgerApivo-visible" onClick={toggleBurgerMenu("burgerBeer")}>
                             Pivo
                         </a>
                         <div className="foldpivo-container">
@@ -65,23 +71,11 @@ export default function Burger() {
                     <li>
                         <a className="">
                             Kontakt
-                            <div className="foldpivo-container">
-                                <ul>
-                                    <li></li>
-                                    <li></li>
-                                </ul>
-                            </div>
                         </a>
                     </li>
                     <li>
                         <a className="">
                             Rezervace
-                            <div className="foldpivo-container">
-                                <ul>
-                                    <li></li>
-                                    <li></li>
-                                </ul>
-                            </div>
                         </a>
                     </li>
                 </ul>

@@ -10,6 +10,9 @@ export default function Header() {
     const [logoColor, setLogoColor] = useState(true)
     const [navBeerLink, setNavBeer] = useState(false)
     const [navMenuLink, setNavMenu] = useState(false)
+    const [burgerClick, setBurger] = useState(false)
+    const [burgerBeerClick, setBeer] = useState(false)
+    const [burgerMenuClick, setMenu] = useState(false)
     let colorsChanged = false
 
     function handleNavColorChange() {
@@ -36,12 +39,37 @@ export default function Header() {
     }, [])
 
     const setNav = (str) => () => {
-        if (str === "beer") {
-            setNavBeer(!navBeerLink)
-            setNavMenu(false)
-        } else if (str === "menu") {
-            setNavMenu(!navMenuLink)
-            setNavBeer(false)
+        switch (str) {
+            case "beer":
+                setNavBeer(!navBeerLink)
+                setNavMenu(false)
+                break
+            case "menu":
+                setNavMenu(!navMenuLink)
+                setNavBeer(false)
+                break
+            case "burgerMenu":
+                setMenu(true)
+                setBeer(false)
+                break
+            case "burgerBeer":
+                setBeer(true)
+                setMenu(false)
+                break
+            case "burger":
+                setBurger(!burgerClick)
+                setBeer(false)
+                setMenu(false)
+                break
+            case "logo":
+                if (burgerClick) {
+                    setBurger(!burgerClick)
+                    setBeer(false)
+                    setMenu(false)
+                }
+                break
+            default:
+                console.log("Invalid")
         }
     }
 
@@ -56,10 +84,8 @@ export default function Header() {
         <header>
             <nav className={`navbar animate-this ${navColor ? 'nav-unscrolled' : 'nav-scrolled'}`}>
                 <div className={`logo ${logoColor ? 'navLogoUnscrolled' : 'navLogoScrolled'}`}>
-                    <a>
-                        <LogoLink classname={'logoOrange'} imageName={'logoOrange.png'}/>
-                        <LogoLink classname={'logoBeige'} imageName={'logoBeige.png'}/>
-                    </a>
+                    <LogoLink logoClick={setNav} classname={'logoOrange'} imageName={'logoOrange.png'}/>
+                    <LogoLink logoClick={setNav} classname={'logoBeige'} imageName={'logoBeige.png'}/>
                 </div>
                 <div className="navLinks">
                     <ul className="navUl">
@@ -127,7 +153,8 @@ export default function Header() {
                         </li>
                     </ul>
                 </div>
-                <Burger/>
+                <Burger toggleBurgerMenu={setNav} burgerClick={burgerClick} burgerMenuClick={burgerMenuClick}
+                        burgerBeerClick={burgerBeerClick}/>
             </nav>
         </header>
     )
