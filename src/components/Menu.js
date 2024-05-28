@@ -7,6 +7,7 @@ export default function Menu({isOpen = null}) {
       <div className={`burgerMenu ${isOpen ? "nav-active" : ''}`}>
         <ul className="navLinksH">
           <li>
+            {/*TODO: Pouzivej nazvy vzdy bud camelCase nebo snake-case, pokud to aplikacni logika nevyzaduje, nekombinuj to. Pr: burgerAmenu burgerAmenu-visible > burger-a-menu burger-a-menu-visible*/}
             <Link to={'/'} className="burgerAmenu burgerAmenu-visible">
               Domů
             </Link>
