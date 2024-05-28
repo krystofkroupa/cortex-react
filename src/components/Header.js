@@ -36,10 +36,10 @@ export default function Header() {
     }, [])
 
     const setNav = (str) => () => {
-        if (str == "beer") {
+        if (str === "beer") {
             setNavBeer(!navBeerLink)
             setNavMenu(false)
-        } else if (str == "menu") {
+        } else if (str === "menu") {
             setNavMenu(!navMenuLink)
             setNavBeer(false)
         }
