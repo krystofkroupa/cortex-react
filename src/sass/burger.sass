@@ -51,14 +51,16 @@ $primary-font: "Avenir Next", sans-serif
     transform-origin: bottom right
     transition: transform 0.3s cubic-bezier(0.77, 0.2, 0.05, 1.0)
 
-.burger div
-  position: relative
-  z-index: 15
-  width: 25px
-  height: 3px
-  margin: 5px
-  border-radius: 8px
-  transition: all 0.3s cubic-bezier(0.77, 0.2, 0.05, 1.0)
+.burger
+  div
+    position: relative
+    z-index: 15
+    width: 25px
+    height: 3px
+    margin: 5px
+    border-radius: 8px
+    background-color: $nav-light-color
+    transition: all 0.3s cubic-bezier(0.77, 0.2, 0.05, 1.0)
 
   .burgerWrapper
     display: block
@@ -71,16 +73,6 @@ $primary-font: "Avenir Next", sans-serif
 
 .nav-active
   transform: translateX(0%)
-
-.nav-unscrolled
-  .burger
-    div
-      background: $primary-color
-
-.nav-scrolled
-  .burger
-    div
-      background-color: $light-color
 
 .burgerMenu
   ul

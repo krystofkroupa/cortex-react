@@ -7,25 +7,28 @@ import Menu from "./Menu"
 export default function Header() {
 
     const location = useLocation()
+    const [isColorInverted, setColorInverted] = useState(true)
     const [navColor, setNavColor] = useState(true)
     const [logoColor, setLogoColor] = useState(true)
     const [isOpen, setIsOpen] = useState(false)
-    let colorsChanged = false
+    let colorsChangedFlag = false
 
     function handleNavColorChange() {
             const scrollPosition = window.scrollY || document.documentElement.scrollTop
             const viewportHeight = window.innerHeight;
             const scrollPercentage = scrollPosition / viewportHeight;
 
-            if (scrollPercentage > 0.75 && !colorsChanged) {
+            if (scrollPercentage > 0.75 && !colorsChangedFlag) {
+                setColorInverted(false)
                 setNavColor(false)
                 setLogoColor(false)
-                colorsChanged = true
+                colorsChangedFlag = true
                 console.log("Tmava")
-            } else if (scrollPercentage <= 0.75 && colorsChanged) {
+            } else if (scrollPercentage <= 0.75 && colorsChangedFlag) {
+                setColorInverted(true)
                 setNavColor(true)
                 setLogoColor(true)
-                colorsChanged = false
+                colorsChangedFlag = false
                 console.log("Svetla")
             }
     }
@@ -36,6 +39,8 @@ export default function Header() {
             window.addEventListener('scroll', handleNavColorChange)
         }
     }, [])
+
+    //${logoColor ? 'navLogoUnscrolled' : 'navLogoScrolled'}
 
     const changeMenuOpen = (str) => () => {
         switch (str){
@@ -56,8 +61,8 @@ export default function Header() {
 
     return (
         <header>
-            <nav className={`navbar animate-this ${navColor ? 'nav-unscrolled' : 'nav-scrolled'}`}>
-                <div onClick={changeMenuOpen("logo")} className={`logo ${logoColor ? 'navLogoUnscrolled' : 'navLogoScrolled'}`}>
+            <nav className={`navbar animate-this ${isColorInverted ? 'colorInverted' : ''}`}>
+                <div onClick={changeMenuOpen("logo")} className={`logo`}>
                         <LogoLink classname={'logoOrange'} imageName={'logoOrange.png'}/>
                         <LogoLink classname={'logoBeige'} imageName={'logoBeige.png'}/>
                 </div>

@@ -7,6 +7,36 @@
   box-sizing: border-box
   scroll-behavior: smooth
 
+.burgerWrapper
+  .burgerMenu
+    ul
+      li
+        color: $nav-light-color
+
+.colorInverted
+  .burger
+    div
+      background-color: $primary-color
+
+  .burgerWrapper
+      color: $primary-color
+
+  .logo
+    .logoBeige
+      opacity: 0
+
+  .burgerWrapper
+    .burgerMenu
+      background-color: $nav-light-color
+
+.burgerMenu
+  background-color: $primary-color
+
+.navbar
+  background-color: $primary-color
+
+.colorInverted
+    background-color: $nav-light-color
 
 .navLinks
   ul
@@ -24,104 +54,15 @@
     ul
       display: none
 
-.logo
-  a
-    cursor: pointer
-
-.nav-pivo
-  position: relative
-
-.nav-menu
-  position: relative
 
 .margin
   margin-left: 20px
 
-.fold-out-pivo
-  border-radius: 5px 5px 12px 12px
-  border: rgb(255, 251, 235, 0.5) 1px solid
-  visibility: visible
-  opacity: 1
-  padding: 4px
-  position: absolute
-  left: -35.845px
-  width: 110.8px
-  background-color: $primary-color
-  transition: all 0.3s cubic-bezier(0.77, 0.2, 0.05, 1.0)
-  transform: translateY(0%)
-
-.fold-out-menu
-  border: rgb(255, 251, 235, 0.5) 1px solid
-  visibility: visible
-  opacity: 1
-  border-radius: 5px 5px 12px 12px
-  padding: 4px
-  position: absolute
-  left: -44.96px
-  width: 140.17px
-  background-color: $primary-color
-  transition: all 0.3s cubic-bezier(0.77, 0.2, 0.05, 1.0)
-  transform: translateY(0%)
-
-.nav-scrolled .fold-out-menu, .nav-scrolled .fold-out-pivo
-  background-color: $light-color
-  border: rgb(255, 184, 76, 0.5) 1px solid
-
-.nav-scrolled .fold-out-menu ul li a, .nav-scrolled .fold-out-pivo ul li a
-  color: $primary-color
-
-.fold-out-menu-hidden, .fold-out-pivo-hidden
-  visibility: hidden
-  opacity: 0
-  transform: translateY(100%)
-
-.fold-out-menu-hidden ul li a, .fold-out-pivo-hidden ul li a
-  opacity: 0
-  transform: translateY(100%)
-
-.foldPivo-hidden, .foldMenu-hidden
-  visibility: hidden
-  opacity: 0
-  transform: translateX(100%)
-
-.foldPivo-visible, .foldMenu-visible
-  visibility: visible
-  opacity: 1
-  transform: translateX(0%)
-
-.burgerAMenu-hidden, .burgerApivo-hidden
-  transform: translateX(-100%)
-  visibility: hidden
-  opacity: 0
-
-.burgerAmenu-visible, .burgerApivo-visible
-  opacity: 1
-  visibility: visible
-  transition: all 0.3s cubic-bezier(0.77, 0.2, 0.05, 1.0)
-  transform: translateX(0%)
-
 .burgerA
   position: relative
 
-.fold-out-menu ul, .fold-out-pivo ul
-  display: flex
-  justify-content: center
-  align-items: center
-  flex-direction: column
-  font-size: 0.7rem
-
-.fold-out-menu ul, .fold-out-pivo ul
-  display: flex
-  justify-content: center
-  align-items: center
-  flex-direction: column
-  font-size: 0.7rem
-
 a
   cursor: pointer
-
-.fold-out-menu ul li a, .fold-out-pivo ul li a, .foldmenu-container ul li a, .foldpivo-container ul li a
-  color: $light-color
 
 body
   background: $light-color
@@ -159,24 +100,8 @@ nav
     display: flex
     list-style: none
 
-.nav-unscrolled, .nav-unscrolled
-  background-color: $light-color
-
-
-.nav-scrolled, .nav-scrolled .burgerMenu
+/*.nav-scrolled, .nav-scrolled .burgerMenu
   background-color: $primary-color
-
-
-.nav-unscrolled
-  li
-    a
-      color: $primary-color
-
-
-.nav-scrolled
-  li
-    a
-      color: $light-color
 
 
 .navLinks
