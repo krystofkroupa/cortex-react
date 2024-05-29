@@ -1,30 +1,86 @@
-@use "sass:meta"
-
-$primary-color: #FFB84C
-$light-color: #FFFBEB
-$primary-font: "Avenir Next", sans-serif
+$height: calc(100vh - 80px)
 
 .main2
   position: relative
-  height: 100vh
-  background-color: $light-color
+  background-color: $secondary-color
   display: flex
   justify-content: center
 
-.mainContainer
-  height: 400px
-  width: 600px
-  background-color: #FFFBEB
+.contactContainer
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: column
+  width: 100vw
+  min-height: 100vh
 
-.contact-container
+.contactText
+  width: 50rem
+  color: $light-color
+  font-size: 4.2em
+  font-weight: bold
+
+  @media screen and (max-width: 924px)
+    font-size: 3em
+    width: 40rem
+
+.contactForm
+  padding: 20px
+  border-radius: 28px
+  min-width: 50rem
+  min-height: 30rem
+  background-color: $light-color
   display: flex
   justify-content: center
   align-items: center
 
-.contact-form
-  width: 40em
-  height: 40em
-  background-color: $primary-color
+  @media screen and (max-width: 924px)
+    flex-direction: column
+    min-width: 40rem
+
+.formContainer
+  min-height: 95%
+  min-width: 95%
+  background: $primary-color
+  border-radius: 28px
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: column
+  form
+    input
+      margin: 5px 0px 5px 0px
+      border: none
+      font-size: 1em
+      font-weight: bold
+      font-family: $primary-font
+      border-radius: 12px
+      padding: 5px
+      background: $light-color
+
+.nameContainer
+  display: flex
+  justify-content: space-between
+  input
+    width: 49%
+    height: 3em
+
+.emailContainer
+  display: flex
+  flex-direction: column
+  align-items: center
+  input
+    width: 100%
+    height: 3em
+
+.textContainer
+  input
+    width: 100%
+    min-height: 3em
+
+
+
+
 
 
 

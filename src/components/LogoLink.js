@@ -6,7 +6,7 @@ export default function Logo({imageName, classname, logoClick}) {
 
     return (
         <Link to={"/#main-page"}>
-            <img onClick={logoClick("logo")} className={classname} src={path}/>
+            <img className={classname} src={path}/>
         </Link>
     )
 }

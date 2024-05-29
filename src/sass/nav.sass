@@ -1,26 +1,24 @@
 @use "sass:meta"
 
-$primary-color: #FFB84C
-$light-color: #FFFBEB
-$primary-font: "Avenir Next", sans-serif
-
+// TODO: Ddefinice pro vsechny prvky, zde to nema co delat
 *
   padding: 0
   margin: 0
   box-sizing: border-box
   scroll-behavior: smooth
 
-.burgerWrapper
-  display: none
 
 .navLinks
   ul
     display: flex
     list-style: none
 
+.isBurgerDisplayed
+    display: none
+
 @media screen and (max-width: 924px)
-  .burgerWrapper
-    display: block
+  .isBurgerDisplayed
+      display: block
 
   .navLinks
     ul
@@ -40,10 +38,7 @@ $primary-font: "Avenir Next", sans-serif
   margin-left: 20px
 
 .fold-out-pivo
-  border-bottom-left-radius: 12px
-  border-bottom-right-radius: 12px
-  border-top-left-radius: 5px
-  border-top-right-radius: 5px
+  border-radius: 5px 5px 12px 12px
   border: rgb(255, 251, 235, 0.5) 1px solid
   visibility: visible
   opacity: 1
@@ -52,23 +47,20 @@ $primary-font: "Avenir Next", sans-serif
   left: -35.845px
   width: 110.8px
   background-color: $primary-color
-  transition: all 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0)
+  transition: all 0.3s cubic-bezier(0.77, 0.2, 0.05, 1.0)
   transform: translateY(0%)
 
 .fold-out-menu
   border: rgb(255, 251, 235, 0.5) 1px solid
   visibility: visible
   opacity: 1
-  border-bottom-left-radius: 12px
-  border-bottom-right-radius: 12px
-  border-top-left-radius: 5px
-  border-top-right-radius: 5px
+  border-radius: 5px 5px 12px 12px
   padding: 4px
   position: absolute
   left: -44.96px
   width: 140.17px
   background-color: $primary-color
-  transition: all 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0)
+  transition: all 0.3s cubic-bezier(0.77, 0.2, 0.05, 1.0)
   transform: translateY(0%)
 
 .nav-scrolled .fold-out-menu, .nav-scrolled .fold-out-pivo
@@ -105,7 +97,7 @@ $primary-font: "Avenir Next", sans-serif
 .burgerAmenu-visible, .burgerApivo-visible
   opacity: 1
   visibility: visible
-  transition: all 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0)
+  transition: all 0.3s cubic-bezier(0.77, 0.2, 0.05, 1.0)
   transform: translateX(0%)
 
 .burgerA
@@ -134,18 +126,6 @@ a
 body
   background: $light-color
 
-.underline::after
-  content: ''
-  position: absolute
-  width: 100%
-  transform: scaleX(0)
-  height: 2px
-  bottom: 0
-  left: 0
-  background-color: $primary-color
-  transform-origin: bottom right
-  transition: transform 0.3s cubic-bezier(0.77, 0.2, 0.05, 1.0)
-
 .nav-scrolled .underline::after
   background-color: #FFFBEB
 
@@ -171,7 +151,7 @@ nav
   display: flex
   justify-content: space-between
   align-items: center
-  transition: all 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0)
+  transition: all 0.3s cubic-bezier(0.77, 0.2, 0.05, 1.0)
   z-index: 10
 
 .burgerMenu
@@ -179,7 +159,7 @@ nav
     display: flex
     list-style: none
 
-.nav-unscrolled, .nav-unscrolled .burgerMenu
+.nav-unscrolled, .nav-unscrolled
   background-color: $light-color
 
 
@@ -208,11 +188,12 @@ nav
 
 
 .navLinks ul li a, .burgerMenu ul li a
+  font-size: 1.1em
   text-decoration: none
   font-family: $primary-font
   letter-spacing: 2px
   font-weight: 500
-  transition: all 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0)
+  transition: all 0.3s cubic-bezier(0.77, 0.2, 0.05, 1.0)
 
 
 .navLogoUnscrolled .logoBeige, .navLogoScrolled .logoOrange
@@ -223,6 +204,7 @@ nav
   opacity: 1
 
 .logo
+  z-index: 10
   height: 70px
   width: 70px
 
@@ -233,7 +215,7 @@ nav
     position: absolute
     top: 5px
     left: 30px
-    transition: all 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0)
+    transition: all 0.3s cubic-bezier(0.77, 0.2, 0.05, 1.0)
 
 .custom-shape-divider-top-16872040701
   .shape-fill

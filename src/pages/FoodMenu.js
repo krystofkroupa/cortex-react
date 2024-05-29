@@ -1,4 +1,5 @@
 import WavesLight from "../components/MainPageWavesLight";
+import ContactsPage from "./ContactsPage";
 
 export default function DailyMenu() {
     return (
@@ -8,6 +9,7 @@ export default function DailyMenu() {
             </div>
             <div className='fill'></div>
             <WavesLight/>
+            <ContactsPage/>
         </div>
     )
 }
