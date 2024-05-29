@@ -7,6 +7,16 @@
   box-sizing: border-box
   scroll-behavior: smooth
 
+.colorInverted
+  .navLinksH
+    a
+      color: $primary-color
+
+
+a, a:visited
+  color: inherit
+
+
 .burgerWrapper
   .burgerMenu
     ul
@@ -14,6 +24,8 @@
         color: $nav-light-color
 
 .colorInverted
+  .underline::after
+    background-color: $primary-color
   .burger
     div
       background-color: $primary-color
@@ -67,7 +79,7 @@ a
 body
   background: $light-color
 
-.nav-scrolled .underline::after
+.underline::after
   background-color: #FFFBEB
 
 .underline:hover::after

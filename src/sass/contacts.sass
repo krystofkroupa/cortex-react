@@ -25,6 +25,9 @@
     font-size: 3em
     width: 600px
 
+  @media screen and (max-width: 650px)
+    width: 100vw
+
 .contactForm
   padding: 20px
   border-radius: 28px
@@ -39,15 +42,18 @@
     flex-direction: column
     min-width: 600px
 
+  @media screen and (max-width: 650px)
+    width: 100vw
+
 .formContainer
-  min-height: 95%
-  min-width: 95%
+  height: 95%
+  width: 95%
   background: $primary-color
   border-radius: 28px
   display: flex
   justify-content: center
   align-items: center
-  flex-direction: column
+
   form
     input, textarea
       color: black

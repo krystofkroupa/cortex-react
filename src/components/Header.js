@@ -14,36 +14,31 @@ export default function Header() {
     let colorsChangedFlag = false
 
     function handleNavColorChange() {
-            const scrollPosition = window.scrollY || document.documentElement.scrollTop
-            const viewportHeight = window.innerHeight;
-            const scrollPercentage = scrollPosition / viewportHeight;
+        const scrollPosition = window.scrollY || document.documentElement.scrollTop
+        const viewportHeight = window.innerHeight;
+        const scrollPercentage = scrollPosition / viewportHeight;
 
-            if (scrollPercentage > 0.75 && !colorsChangedFlag) {
-                setColorInverted(false)
-                setNavColor(false)
-                setLogoColor(false)
-                colorsChangedFlag = true
-                console.log("Tmava")
-            } else if (scrollPercentage <= 0.75 && colorsChangedFlag) {
-                setColorInverted(true)
-                setNavColor(true)
-                setLogoColor(true)
-                colorsChangedFlag = false
-                console.log("Svetla")
-            }
+        if (scrollPercentage > 0.75 && !colorsChangedFlag) {
+            setColorInverted(false)
+            colorsChangedFlag = true
+            console.log("Tmava")
+        } else if (scrollPercentage <= 0.75 && colorsChangedFlag) {
+            setColorInverted(true)
+            colorsChangedFlag = false
+            console.log("Svetla")
+        }
+
     }
 
     useEffect(() => {
         window.removeEventListener('scroll', handleNavColorChange)
-        if (location.pathname === '/') {
-            window.addEventListener('scroll', handleNavColorChange)
-        }
+        window.addEventListener('scroll', () => requestAnimationFrame(handleNavColorChange))
     }, [])
 
     //${logoColor ? 'navLogoUnscrolled' : 'navLogoScrolled'}
 
     const changeMenuOpen = (str) => () => {
-        switch (str){
+        switch (str) {
             case "burger":
                 setIsOpen(!isOpen)
                 break
@@ -61,10 +56,10 @@ export default function Header() {
 
     return (
         <header>
-            <nav className={`navbar animate-this ${isColorInverted ? 'colorInverted' : ''}`}>
+            <nav className={`navbar ${isColorInverted ? 'colorInverted' : ''}`}>
                 <div onClick={changeMenuOpen("logo")} className={`logo`}>
-                        <LogoLink classname={'logoOrange'} imageName={'logoOrange.png'}/>
-                        <LogoLink classname={'logoBeige'} imageName={'logoBeige.png'}/>
+                    <LogoLink classname={'logoOrange'} imageName={'logoOrange.png'}/>
+                    <LogoLink classname={'logoBeige'} imageName={'logoBeige.png'}/>
                 </div>
                 <Menu changeMenuOpen={changeMenuOpen} isOpen={isOpen}/>
                 <Burger changeMenuOpen={changeMenuOpen} isOpen={isOpen}/>

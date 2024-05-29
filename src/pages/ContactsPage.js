@@ -48,7 +48,7 @@ export default function ContactsPage() {
                                 <input value={dataInForm.lastName} onChange={(e) => handleFormDataChange('lastName', e.target.value)} type="text" name="lastname" placeholder="Přijmení"/>
                             </div>
                             <div className="emailContainer">
-                                <input value={dataInForm.email} onChange={(e) => handleFormDataChange('email', e.target.value)} type="text" name="email" placeholder="Emailová adresa"/>
+                                <input value={dataInForm.email} onChange={(e) => handleFormDataChange('email', e.target.value)} type="email" name="email" placeholder="Emailová adresa"/>
                             </div>
                             <div className="textContainer">
                                 <textarea value={dataInForm.message} onChange={(e) => handleFormDataChange('message', e.target.value)} placeholder="Vaše zpráva" name="message" rows="5" cols="50"/>

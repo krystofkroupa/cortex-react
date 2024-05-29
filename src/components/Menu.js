@@ -13,13 +13,12 @@ export default function Menu({isOpen, changeMenuOpen}) {
                         </Link>
                     </li>
                     <li>
-                        <Link to={'/pivni-menu'} onClick={changeMenuOpen("link")}
-                              className="underline burgerApivo burgerApivo-visible">
+                        <Link to={'/pivni-menu'} onClick={changeMenuOpen("link")} className="underline">
                             Pivo
                         </Link>
                     </li>
                     <li>
-                        <Link to={'/#contacts-page'}>
+                        <Link to={'/#contacts-page'} className="underline">
                             Kontakt
                         </Link>
                     </li>
