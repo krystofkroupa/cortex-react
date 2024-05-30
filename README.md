@@ -1,4 +1,4 @@
 TODO: 
-Fix contact form responsivnes
+Fix contact form responsivnes,
 Cleanup SASS
 :-)
