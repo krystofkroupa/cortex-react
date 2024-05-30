@@ -1,5 +1,69 @@
-.poledni-menu
-  height: 100vh
+.poledniMenu
+  min-height: 100vh
   width: 100vw
-  background-color: crimson
+  background-color: #FFF7D1
   z-index: 100000
+  display: flex
+  justify-content: center
+  align-items: center
+  padding: 90px 0px 10px 0px
+
+  .dailyMenuFoodContainer
+    display: flex
+    flex-direction: column
+    justify-content: center
+    width: 85%
+    height: 85%
+    max-width: 1105px
+    border-radius: 28px
+
+    h1
+      font-size: 3em
+      color: $header-color
+      font-family: "Poppins", sans-serif
+      font-weight: 700
+      font-style: normal
+
+    h2
+      font-size: 2em
+      color: #FDA403
+
+    p
+      color: $primary-color
+      font-size: 1.3em
+
+    .dailyMenuHeader
+      margin-bottom: 10px
+
+    @media screen and (max-width: 600px)
+      h1
+        font-size: 2.4em
+      h2
+        font-size: 1.8em
+      p
+        font-size: 1.2em
+
+    @media screen and (max-width: 480px)
+      h1
+        font-size: 2em
+      h2
+        font-size: 1.4em
+      p
+        font-size: 1em
+
+
+.foodContainer
+  display: flex
+  justify-content: space-between
+
+.foodType
+  margin-bottom: 10px
+
+.foodName
+  width: 70%
+
+.divider
+  width: 5em
+  height: 2px
+  background-color: #FFB84C
+  margin: 10px 0px 10px 0px

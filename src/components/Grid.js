@@ -42,7 +42,7 @@ export default function Grid() {
                     </div>
                 </div>
                 <div className="button-poledni">
-                    <ButtonLink title={'Zjistit více'} link={'/poledni'}/>
+                    <ButtonLink title={'Zjistit více'} link={'/#poledni'}/>
                 </div>
             </article>
             <article className="grid-testimonial grid-row-span2 grid3">

@@ -1,5 +1,6 @@
 import Grid from '../components/Grid'
 import WavesLight from '../components/MainPageWavesLight'
+import DailyMenu from "./DailyMenu";
 import ContactsPage from "./ContactsPage";
 import {useLocation} from "react-router-dom";
 
@@ -15,6 +16,7 @@ export default function HomePage() {
                 <div className="fill"></div>
                 <WavesLight/>
             </div>
+            <DailyMenu/>
             <ContactsPage/>
         </div>
     );

@@ -18,11 +18,11 @@ export default function Header() {
         const viewportHeight = window.innerHeight;
         const scrollPercentage = scrollPosition / viewportHeight;
 
-        if (scrollPercentage > 0.75 && !colorsChangedFlag) {
+        if (scrollPercentage > 0.7 && !colorsChangedFlag) {
             setColorInverted(false)
             colorsChangedFlag = true
             console.log("Tmava")
-        } else if (scrollPercentage <= 0.75 && colorsChangedFlag) {
+        } else if (scrollPercentage <= 0.7 && colorsChangedFlag) {
             setColorInverted(true)
             colorsChangedFlag = false
             console.log("Svetla")

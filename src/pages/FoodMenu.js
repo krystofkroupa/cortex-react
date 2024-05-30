@@ -4,7 +4,7 @@ import ContactsPage from "./ContactsPage";
 export default function DailyMenu() {
     return (
         <div className='poledniPage'>
-            <div className='poledni-menu'>
+            <div className='poledniMenu'>
 
             </div>
             <div className='fill'></div>
