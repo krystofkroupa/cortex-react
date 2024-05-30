@@ -1,15 +1,12 @@
 import WavesLight from "../components/MainPageWavesLight";
 import ContactsPage from "./ContactsPage";
+import DailyMenu from "./DailyMenu";
 
-export default function DailyMenu() {
+export default function FoodMenu() {
     return (
         <div className='poledniPage'>
-            <div className='poledniMenu'>
-
-            </div>
-            <div className='fill'></div>
+            <DailyMenu/>
             <WavesLight/>
-            <ContactsPage/>
         </div>
     )
 }
