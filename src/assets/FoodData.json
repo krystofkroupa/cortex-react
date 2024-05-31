@@ -1,0 +1,114 @@
+[
+  {
+    "name": "Petrželová polévka s vaječnou sedlinou",
+    "foodType": "soup",
+    "type": "food",
+    "price": "49"
+  },
+  {
+    "name": "Cordon Bleu z krůtího masa s bramborovou kaší, sterilovaná okurka",
+    "foodType": "mainMeal",
+    "type": "food",
+    "price": "179"
+  },
+  {
+    "name": "Hovězí svíčková na smetaně, brusinky",
+    "type": "food",
+    "price": "169"
+  },
+  {
+    "name": "Vepřový steak se zelenými fazolkami a opečenými brambora",
+    "type": "food",
+    "price": "159"
+  },
+  {
+    "name": "Bramborové knedlíky v jahodové omáčce",
+    "type": "food",
+    "price": "149"
+  },
+  {
+    "name": "Smažená treska v parmazánovém těstíčku s bramborovou kaší, tomatový salátek",
+    "type": "food",
+    "foodType": "weeklySpecial",
+    "price": "189"
+  },
+  {
+    "name": "Lívance s malinovým tvarohem",
+    "type": "food",
+    "foodType": "desert",
+    "price": "69"
+  },
+
+
+
+  {
+    "name": "Clock Anežka 11°",
+    "description": "spodně kvašené pivo, bezlepkový ležák extra chmelený, Pivovar Clock, Potštejn, IBU: 35",
+    "type": "beer",
+    "price": "79",
+    "priceSmall": "59"
+  },
+  {
+    "name": "Clock Anežka 11°",
+    "description": "spodně kvašené pivo, bezlepkový ležák extra chmelený, Pivovar Clock, Potštejn, IBU: 35",
+    "type": "beer",
+    "price": "79",
+    "priceSmall": "59"
+  },
+  {
+    "name": "Malešický Originál N°2 světlý ležák 12°",
+    "description": "spodně kvašené nefiltrované pivo, tradiční český ležák, Malešický mikropivovar v Kynšperském pivovaru",
+    "type": "beer",
+    "price": "69",
+    "priceSmall": "49"
+  },
+  {
+    "name": "Kynšperský zajíc polotmavý ležák 12°",
+    "description": "spodně kvašené pivo, jantarový ležák, Kynšperský pivovar, Kynšperk",
+    "type": "beer",
+    "price": "69",
+    "priceSmall": "49"
+  },
+  {
+    "name": "Mazák Galaxy IPL 11°",
+    "description": "spodně kvašené pivo, Indian Pale Lager, pivovar Mazák",
+    "type": "beer",
+    "price": "79",
+    "priceSmall": "59"
+  },
+  {
+    "name": "Paulaner Hefe-Weissbier 12°",
+    "description": "svrchně kvašené pšeničné pivo,  Paulaner, Mnichov, Německo",
+    "type": "beer",
+    "price": "89",
+    "priceSmall": "69"
+  },
+  {
+    "name": "Antoš Raspberry Sour 11°",
+    "description": "svrchně kvašené pivo, malinový Sour Ale, pivovar Antoš",
+    "type": "beer",
+    "price": "119",
+    "priceSmall": "99"
+  },
+  {
+    "name": "Malešický Originál N°1 Pale Ale 11°",
+    "description": "svrchně kvašené pivo, American Pale Ale, Malešický mikropivovar v Rodinné pivovaru Zichovec, IBU: 40, použité chmely: Columbus, Citra",
+    "type": "beer",
+    "price": "85",
+    "priceSmall": "55"
+  },
+  {
+    "name": "Antoš Hubený netopýr 11°",
+    "description": "svrchně kvašené pivo, žitná Session Ipa, pivovar Antoš",
+    "type": "beer",
+    "price": "89",
+    "priceSmall": "69"
+  },
+  {
+    "name": "Hotline IPA 15°",
+    "description": "Svrchně kvašené pivo, Indian Pale Lager, pivovar Zichovec",
+    "type": "beer",
+    "price": "89",
+    "priceSmall": "69"
+  }
+]

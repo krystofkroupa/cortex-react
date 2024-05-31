@@ -10,10 +10,28 @@ export default function ContactsPage() {
         message: ''
     })
 
-    function printObjectsFromDataForm() {
-        Object.entries(dataInForm).map(([key, value]) => {
-            console.log(`${key}: ${value}`)
+
+    function deleteDataFromForm() {
+        setDataInForm({
+            firstName: '',
+            lastName: '',
+            email: '',
+            message: ''
         })
+    }
+
+
+
+    function printObjectsFromDataForm() {
+        const allFieldsFilled = Object.values(dataInForm).every(field => field.trim() !== '')
+
+        if (allFieldsFilled) {
+            Object.entries(dataInForm).map(([key, value]) => {
+                console.log(`${key}: ${value}`)
+            })
+        } else {
+            console.log("Vyplňte prosím všechna pole")
+        }
     }
 
     const handleFormDataChange = (name, value) => {
@@ -26,12 +44,7 @@ export default function ContactsPage() {
     const handleFormSubmit = (event) => {
         event.preventDefault()
         printObjectsFromDataForm()
-        setDataInForm({
-            firstName: '',
-            lastName: '',
-            email: '',
-            message: ''
-        })
+        deleteDataFromForm()
     }
 
     return (
