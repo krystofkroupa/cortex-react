@@ -1,15 +1,17 @@
-import { useLayoutEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import {useLayoutEffect} from "react"
+import {useLocation} from "react-router-dom"
 
-const ScrollToHashElement = () => {
+// TODO: Zápis anonymní funkce přiřazené do kontasnty je za mě fakt zbytečný, vypadá to cool, ale význam to nemá. Předělal jsem na funkci.
+export default function ScrollToHashElement () {
     const location = useLocation();
 
     useLayoutEffect(() => {
         const { hash } = location;
 
+        //TODO: Zase annonymní funkce a const. Pryč s tim
         const removeHashCharacter = (str) => {
-            const result = str.slice(1);
-            return result;
+            // TODO: Tohle je detail, ale vytvářet proměnnou zbytečný
+            return str.slice(1);
         };
 
         if (hash) {
@@ -25,6 +27,4 @@ const ScrollToHashElement = () => {
     }, [location]);
 
     return null;
-};
-
-export default ScrollToHashElement;
+}

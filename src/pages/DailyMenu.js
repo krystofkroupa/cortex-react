@@ -1,5 +1,5 @@
-import {dailyMenuFoodData} from '../components/dailyMenuFoodData'
-import DailyMenuFoodComponent from '../components/DailyMenuFoodComponent'
+import dailyMenuFoodData from '../components/dailyMenuFoodData'
+import DailyMenuFood from '../components/DailyMenuFood'
 
 
 export default function DailyMenu() {
@@ -17,7 +17,7 @@ export default function DailyMenu() {
                         {dailyMenuFoodData.map((data, key) => {
                             return (
                                 <div key={key}>
-                                    <DailyMenuFoodComponent
+                                    <DailyMenuFood
                                         key={key}
                                         type={data.type}
                                         food={data.food}
